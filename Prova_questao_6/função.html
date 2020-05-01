@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <input id="numberVezes">
+    <button id="numberVezesButton"> Numero para inverter</button>
+
+    <input id="inputNumber">
+    <button id="botao"> Coloque o valor ao lado e aperte esse botão para adicionar, um de cada vez!!!</button>
+
+    <button id="resultado" onclick="solucao(numeros, numberVezes.value)">Exibir resultado!</button>
+
+
+    <script type="text/javascript">
+
+        var inputNumber = '';
+        var numberVezes = '';
+        var button = document.querySelector("#botao");
+        var numeros = []; 
+        var botaoNumeros = document.querySelector("#numberVezesButton");
+
+        botaoNumeros.onclick = function(){
+            numberVezes = document.querySelector("#numberVezes");
+            return numberVezes;
+        }
+
+        button.onclick = function() {
+            inputNumber = document.querySelector("#inputNumber")
+            numeros.push(inputNumber.value);    
+        }
+        
+        function solucao(args, numberVezes) {
+            var i = 1;
+            for(i; i <= numberVezes; i++){
+                args.unshift(args.pop());
+            }
+            alert("Esse é o resultado do array ->> " + args);
+        }
+
+    </script>
+</body>
+</html>
